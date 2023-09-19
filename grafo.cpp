@@ -2,6 +2,7 @@
 using namespace std;
 struct arista{ 
     int datoDestino; 
+    float peso;
     arista*sgteArista; 
 }; typedef arista*parista;
 
@@ -18,11 +19,13 @@ class grafo{
     grafo();
     ~grafo(); 
     void insertarVertice(int); 
-    void insertarArista(int,int); 
-    void imprimirGrafo(); };    
+    void insertarArista(int,int,float peso); 
+    void imprimirGrafo();
+    float sumarPesos(); 
+};    
 
 grafo::grafo(){
-     pGrafo = nullptr; 
+     pGrafo = NULL; 
 }
 
 grafo::~grafo(){ 
@@ -49,7 +52,7 @@ void grafo::insertarVertice(int x){
      pGrafo=p;
 }
 
-void grafo::insertarArista(int x,int y){ 
+void grafo::insertarArista(int x,int y,float peso){ 
     pvertice p; 
     parista a; 
     p=pGrafo; 
@@ -59,6 +62,7 @@ void grafo::insertarArista(int x,int y){
         if(p!=NULL){ 
             a=new arista;
             a->datoDestino=y;
+            a->peso = peso;
             a->sgteArista=p->adyacente;
             p->adyacente=a;
         }
@@ -74,24 +78,64 @@ void grafo::imprimirGrafo(){
             cout<<p->datoOrigen<<"";
             a=p->adyacente;
             while(a!=NULL){ 
-                cout<<a->datoDestino<<"";
+                cout<<" "<<a->datoDestino<<" ";
                 a=a->sgteArista; 
             } 
             cout<<endl;
             p=p->sgteVertice; 
         } 
 }
+float grafo::sumarPesos(){
+    pvertice p= pGrafo;
+    parista i;
+    float suma=0;
+    if(p!=NULL){
+        while(p!=NULL){
+            i=p->adyacente;
+            while(i!=NULL){
+                suma+=i->peso;
+                i=i->sgteArista;
+            }
+            p=p->sgteVertice;
+        }
+    }
+    return suma;
+
+}
+
 int main(){
     grafo g;
     int x,y;
     g.insertarVertice(4);
+    cout<<"vertice insertado"<<endl;
+    g.imprimirGrafo();
     g.insertarVertice(6);
+    cout<<"vertice insertado"<<endl;
+    g.imprimirGrafo();
+    g.insertarArista(6,4,12);
+    cout<<"arista insertado"<<endl;
+    g.imprimirGrafo();
     g.insertarVertice(3);
-    g.insertarArista(4,6);
+    cout<<"vertice insertado"<<endl;
+    g.imprimirGrafo();
+    g.insertarArista(6,3,12.5);
+    cout<<"arista insertado"<<endl;
+    g.imprimirGrafo();
+    cout<<"sumando pesos de aristas"<<g.sumarPesos()<<endl;
+    g.insertarArista(3,4,100);
+    cout<<"arista insertado"<<endl;
+    g.imprimirGrafo();
+    cout<<"sumando pesos de aristas"<<g.sumarPesos()<<endl;
+
+
+}
+    /*
+    g.insertarVertice(3);
+    
     g.insertarArista(3,6);
     g.insertarArista(3,4); 
     cout<<"VertAristas"<<endl;
-    g.imprimirGrafo(); }
+    g.imprimirGrafo(); }*/
 
 
 
