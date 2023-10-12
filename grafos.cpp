@@ -1089,9 +1089,6 @@ void Prim::prim(int r){
     for(int i=0;i<n;i++){
         en_arbol[i]=-1;
     }
-    for(int i=0;i<n;i++){
-        cout<<en_arbol[i]<<"\t";
-    }
     Arista*aris;
     procesar(r,en_arbol);
     while(!pila.vacia()){
@@ -1116,6 +1113,7 @@ void Prim::procesar(int r,int*pr){
     cout<<endl;
      pvertice p=gr.buscarPosV(r);
      parista a=p->arist;
+     gr.imprimirAristas(r);
      while(a!=NULL){
         int v=a->datoDestino;
         if(pr[v]==-1){
