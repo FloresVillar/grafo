@@ -4,5 +4,6 @@
         "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
-    "workbench.colorTheme": "Default Dark+"
+    "workbench.colorTheme": "Default Light+",
+    "workbench.preferredDarkColorTheme": "Visual Studio Light"
 }

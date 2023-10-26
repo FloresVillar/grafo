@@ -245,3 +245,47 @@ class boruvka(grafo g){
      //g.borrarAristas(3);
     //g.imprimirGrafo();
     //g.ordenarPesosAristas(0);
+
+
+
+
+    /*  switch (opcion){
+    case 1:{
+        int inicio;
+        cout<<"ingresar vertice inicio"<<endl;
+        cin>>inicio;
+        Bfs bfs(g,inicio);
+    }
+    break;
+    case 2:{
+        Dfs obj(g);
+    }
+    break;
+    case 3:{
+        int a,b;
+        cout<<"ingresar nodos a analizar"<<endl;
+        cin>>a;     
+        cin>>b;
+        Camino cam(g,a,b);
+        cout<<"existe camino de"<<a<<"- "<<b<<"?: 1:si  0:no "<<cam.flagg()<<endl;       
+    }
+    break;
+    case 4:{
+        Circuito cir(g);
+        cout<<"existe algun ciclo? si:1   no:0 \t"<<cir.flag<<endl;
+    }
+    case 5:{
+        Bicolorable bi(g);
+        cout<<"es bicolorable? si:1   no:0 \t"<<bi.flag<<endl;
+    }
+    break;
+    case 6:{
+        int inicio;
+        cout<<"ingresa el nodo de inicio"<<endl;
+        cin>>inicio;
+        Prim pri(g,inicio);
+        pri.arbol.imprimirGrafo();       
+    }
+    default:
+        break;
+    }*/
