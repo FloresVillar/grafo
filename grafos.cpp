@@ -1674,26 +1674,6 @@ int main(){
     g.insertarVertice(3);
     g.insertarVertice(4);
     g.insertarVertice(5);
-    g.insertarArista(0,1,41);
-    g.insertarArista(1,2,51);
-    g.insertarArista(2,3,50);
-    g.insertarArista(4,3,36);
-    g.insertarArista(3,5,38);
-    g.insertarArista(3,0,45);
-    g.insertarArista(0,5,29);
-    g.insertarArista(5,4,21);
-    g.insertarArista(1,4,32);
-    g.insertarArista(4,2,32);
-    g.insertarArista(5,1,24);
-    g.imprimirGrafo();
-    Dijkstra dij(g,0);
-}
-    /*g.insertarVertice(0);
-    g.insertarVertice(1);
-    g.insertarVertice(2);
-    g.insertarVertice(3);
-    g.insertarVertice(4);
-    g.insertarVertice(5);
     g.insertarVertice(6);
     g.insertarVertice(7);
     g.insertarArista(0,6,53);
@@ -1708,28 +1688,69 @@ int main(){
     g.insertarArista(7,0,31);
     g.insertarArista(7,6,25);
     g.insertarArista(7,1,21);
-    g.imprimirGrafo();*/
+    g.imprimirGrafo();
     //cout<<"el dato del inicio del grafo es :"<<g.inicio()->datoOrigen<<endl;
     //cout<<"suma de pesos"<<g.sumarPesos()<<endl;
-    //se recomienda descomentar para ejecutar Bfs
+            //se recomienda descomentar para ejecutar Bfs
     //Bfs bfs(g,2);
-    //se recomienda descomentar para ejecutar Dfs
+            //se recomienda descomentar para ejecutar Dfs
     //Dfs obj(g);  //por alguna razon Dfs , Bfs y Camino no ejecutan juntos en main
     //cout<<"menu despues de dfs"<<endl;
-    //se recomienda descomentar para ejecutar Camino
+            //se recomienda descomentar para ejecutar Camino
     //Camino cam(g,3,7);
     //cout<<"existe camino de 3-7?"<<cam.flagg()<<endl;
-    //se recomienda descomentar para ejecutar circuito
+            //se recomienda descomentar para ejecutar circuito
     //Circuito cir(g);
     //cout<<"existe algun ciclo? si:1   no:0 \t"<<cir.flag<<endl;
-    //se recomienda descomentar para ejecutar Bicolorable
+            //se recomienda descomentar para ejecutar Bicolorable
     //Bicolorable bi(g);
     //cout<<"es bicolorable? si:1   no:0 \t"<<bi.flag<<endl;
     //cout<<"existe circuito? 0 no 1 si"<<g.circuito()<<endl;
+            //se recomienda descomentar para ejecutar prim
     //Prim pri(g,0);
     //pri.arbol.imprimirGrafo();
     //int opcion;
     //en vscode no he podido pedir dato desde terminal
     //cout<<"ingresar opcion deseada 1:Bfs    2:Dfs   3:camino  4:circuito  5:Bicolorabilidad   6:Prim"<<endl;
-    //cin>>opcion;
-
+    /*cin>>opcion;
+    switch (opcion){
+    case 1:{
+        int inicio;
+        cout<<"ingresar vertice inicio"<<endl;
+        cin>>inicio;
+        Bfs bfs(g,inicio);
+    }
+    break;
+    case 2:{
+        Dfs obj(g);
+    }
+    break;
+    case 3:{
+        int a,b;
+        cout<<"ingresar nodos a analizar"<<endl;
+        cin>>a;     
+        cin>>b;
+        Camino cam(g,a,b);
+        cout<<"existe camino de"<<a<<"- "<<b<<"?: 1:si  0:no "<<cam.flagg()<<endl;       
+    }
+    break;
+    case 4:{
+        Circuito cir(g);
+        cout<<"existe algun ciclo? si:1   no:0 \t"<<cir.flag<<endl;
+    }
+    case 5:{
+        Bicolorable bi(g);
+        cout<<"es bicolorable? si:1   no:0 \t"<<bi.flag<<endl;
+    }
+    break;
+    case 6:{
+        int inicio;
+        cout<<"ingresa el nodo de inicio"<<endl;
+        cin>>inicio;
+        Prim pri(g,inicio);
+        pri.arbol.imprimirGrafo();       
+    }
+    default:
+        break;
+    }*/
+}
